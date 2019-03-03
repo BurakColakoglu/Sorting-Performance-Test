@@ -1,1 +1,13 @@
 
+public class SortingTests{
+    public static void insert(int[] x, int i) {
+        // place x[i] in its proper place among sorted values x[0],
+        // x[1]...x[i-1]
+        int temp = x[i]; // save the value
+        int j = i - 1;
+        while (j >= 0 && temp < x[j]) { // determine where to place temp
+            x[j + 1] = x[j]; // shift right
+            j--;
+        }
+        x[j + 1] = temp; // place temp (x[i]) in its correct position
+    }
